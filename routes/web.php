@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController; /* Use a specific controller */
 Route::get('/', HomeController::class); /* Default route */
 
 Route::controller(CursoController::class)->group(function(){
-    Route::get('cursos', 'index');
-    Route::get('cursos/create', 'Create');
-    Route::get('cursos/{curso}', 'show'); 
+    Route::get('cursos', 'index')->name('cursos.index');
+    Route::get('cursos/create', 'Create')->name('cursos.create');
+    Route::get('cursos/{id}', 'show')->name('cursos.show');
 });
