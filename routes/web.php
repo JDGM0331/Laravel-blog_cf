@@ -17,4 +17,4 @@ use App\Http\Controllers\HomeController; /* Use a specific controller */
 
 Route::get('/', HomeController::class); /* Default route */
 
-Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas' => 'curso'])->names('cursos');
+Route::resource('cursos', CursoController::class);
