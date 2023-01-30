@@ -10,4 +10,7 @@ class Curso extends Model
     use HasFactory;
 
     /// protected $table = 'users'; /* This is used when we want relate the nodel with diferente tables sinde its name */
+
+    /* protected $fillable = ['name', 'descripcion', 'categoria']; */
+    protected $guarded = [];
 }
