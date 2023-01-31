@@ -4,6 +4,9 @@ use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; /* Use a specific controller */
 
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +23,12 @@ Route::get('/', HomeController::class)->name('home'); /* Default route */
 Route::resource('cursos', CursoController::class);
 
 Route::view('nosotros', 'nosotros')->name('nosotros'); /* Route for static views */
+
+Route::get('contactanos', function(){
+
+    $correo = new ContactanosMailable;
+    Mail::to('pruebasjdgm123@gmail.com')->send($correo);
+
+    return "Mensaje enviado"; 
+
+});
