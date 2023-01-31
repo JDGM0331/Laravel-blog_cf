@@ -15,6 +15,8 @@ use App\Http\Controllers\HomeController; /* Use a specific controller */
 |
 */
 
-Route::get('/', HomeController::class); /* Default route */
+Route::get('/', HomeController::class)->name('home'); /* Default route */
 
 Route::resource('cursos', CursoController::class);
+
+Route::view('nosotros', 'nosotros')->name('nosotros'); /* Route for static views */
